@@ -19,7 +19,7 @@ ggplot(deaths.totals, aes(x = year, y = cumulative.deaths)) +
   scale_x_continuous(breaks = c(1980, 1981, 1982, 1984, 1985, 1988, 1989, 1993, 2009)) +
   scale_y_continuous(limits = c(0, 140), breaks = seq(0, 140, 20)) +
   labs(title = "Tracking the body count of the Friday the 13th films", subtitle = "cumulative on-screen deaths, from Friday the 13th (1980) to Friday the 13th (2009)", y = "", x = "", 
-       caption = "Source: fandom.wikia.com") +
+       caption = "Source: fandom.wikia.com\nNote: excludes Jason X (2001) and Freddy vs. Jason (2003)") +
   theme(plot.title = element_text(size = 16, face = "bold"),
         panel.grid.minor = element_blank(), 
         panel.grid.major = element_blank(), 
@@ -29,5 +29,6 @@ ggplot(deaths.totals, aes(x = year, y = cumulative.deaths)) +
         plot.caption = element_text(hjust = -.01, color = 'grey30', size = 9))
 
 
+ggsave('plot.png', width = 12, height = 6)
 
 
